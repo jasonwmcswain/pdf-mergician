@@ -1,0 +1,32 @@
+# Example PyPI configuration file
+# Copy this to ~/.pypirc and fill in your API tokens
+#
+# IMPORTANT: Never commit this file with real tokens to git!
+# This is just an example template.
+
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = pypi-YOUR_PYPI_TOKEN_HERE
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = pypi-YOUR_TESTPYPI_TOKEN_HERE
+
+# Instructions:
+# 1. Copy this file to ~/.pypirc (Linux/Mac) or %USERPROFILE%\.pypirc (Windows)
+# 2. Replace YOUR_PYPI_TOKEN_HERE with your actual PyPI API token
+# 3. Replace YOUR_TESTPYPI_TOKEN_HERE with your actual TestPyPI API token
+# 4. Set permissions: chmod 600 ~/.pypirc (Linux/Mac only)
+#
+# Get tokens from:
+# - PyPI: https://pypi.org/manage/account/
+# - TestPyPI: https://test.pypi.org/manage/account/
+#
+# See docs/pypi-setup.md for detailed instructions.
+
