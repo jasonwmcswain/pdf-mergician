@@ -20,7 +20,7 @@ def sample_pdfs(tmp_path):
     """Create sample PDFs for CLI testing."""
     pdfs = []
     for i in range(3):
-        pdf_path = tmp_path / f"test{i+1}.pdf"
+        pdf_path = tmp_path / f"test{i + 1}.pdf"
         writer = PdfWriter()
         for _ in range(5):
             writer.add_blank_page(width=612, height=792)
@@ -36,9 +36,7 @@ class TestMergeCommand:
     def test_merge_basic(self, runner, sample_pdfs, tmp_path):
         """Test basic merge command."""
         output = tmp_path / "output.pdf"
-        result = runner.invoke(
-            cli, ["merge", str(output)] + [str(p) for p in sample_pdfs]
-        )
+        result = runner.invoke(cli, ["merge", str(output)] + [str(p) for p in sample_pdfs])
 
         assert result.exit_code == 0
         assert "Created" in result.output
@@ -61,9 +59,7 @@ class TestMergeCommand:
         output = tmp_path / "output.pdf"
         nonexistent = tmp_path / "nonexistent.pdf"
 
-        result = runner.invoke(
-            cli, ["merge", str(output), str(sample_pdfs[0]), str(nonexistent)]
-        )
+        result = runner.invoke(cli, ["merge", str(output), str(sample_pdfs[0]), str(nonexistent)])
 
         assert result.exit_code != 0
         # Click validates file existence and provides its own error message
@@ -115,9 +111,7 @@ class TestPatternCommand:
     def test_pattern_single_page(self, runner, sample_pdfs, tmp_path):
         """Test pattern with single page specification."""
         output = tmp_path / "output.pdf"
-        result = runner.invoke(
-            cli, ["pattern", str(output), "-s", f"{sample_pdfs[0]}:1-1"]
-        )
+        result = runner.invoke(cli, ["pattern", str(output), "-s", f"{sample_pdfs[0]}:1-1"])
 
         assert result.exit_code == 0
         reader = PdfReader(output)
@@ -133,9 +127,7 @@ class TestPatternCommand:
     def test_pattern_invalid_format(self, runner, sample_pdfs, tmp_path):
         """Test pattern with invalid format."""
         output = tmp_path / "output.pdf"
-        result = runner.invoke(
-            cli, ["pattern", str(output), "-s", "invalid_format"]
-        )
+        result = runner.invoke(cli, ["pattern", str(output), "-s", "invalid_format"])
 
         assert result.exit_code != 0
 
@@ -199,9 +191,7 @@ class TestRotateCommand:
     def test_rotate_all_pages(self, runner, sample_pdfs, tmp_path):
         """Test rotating all pages."""
         output = tmp_path / "rotated.pdf"
-        result = runner.invoke(
-            cli, ["rotate", str(sample_pdfs[0]), str(output), "--angle", "90"]
-        )
+        result = runner.invoke(cli, ["rotate", str(sample_pdfs[0]), str(output), "--angle", "90"])
 
         assert result.exit_code == 0
         assert "Created" in result.output
@@ -229,9 +219,7 @@ class TestRotateCommand:
     def test_rotate_negative_angle(self, runner, sample_pdfs, tmp_path):
         """Test rotating with negative angle."""
         output = tmp_path / "rotated.pdf"
-        result = runner.invoke(
-            cli, ["rotate", str(sample_pdfs[0]), str(output), "--angle", "-90"]
-        )
+        result = runner.invoke(cli, ["rotate", str(sample_pdfs[0]), str(output), "--angle", "-90"])
 
         assert result.exit_code == 0
         assert output.exists()
@@ -275,9 +263,7 @@ class TestExtractCommand:
     def test_extract_single_page(self, runner, sample_pdfs, tmp_path):
         """Test extracting a single page."""
         output = tmp_path / "extracted.pdf"
-        result = runner.invoke(
-            cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "3"]
-        )
+        result = runner.invoke(cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "3"])
 
         assert result.exit_code == 0
         assert output.exists()
@@ -300,9 +286,7 @@ class TestExtractCommand:
     def test_extract_range(self, runner, sample_pdfs, tmp_path):
         """Test extracting a range of pages."""
         output = tmp_path / "extracted.pdf"
-        result = runner.invoke(
-            cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "2-4"]
-        )
+        result = runner.invoke(cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "2-4"])
 
         assert result.exit_code == 0
 
@@ -331,9 +315,7 @@ class TestExtractCommand:
     def test_extract_invalid_range(self, runner, sample_pdfs, tmp_path):
         """Test extract with invalid range."""
         output = tmp_path / "extracted.pdf"
-        result = runner.invoke(
-            cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "5-2"]
-        )
+        result = runner.invoke(cli, ["extract", str(sample_pdfs[0]), str(output), "--pages", "5-2"])
 
         assert result.exit_code != 0
 
@@ -372,4 +354,3 @@ class TestCLIGeneral:
         assert result.exit_code == 0
         # Should show help
         assert "pdf-mergician" in result.output
-

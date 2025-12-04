@@ -77,27 +77,19 @@ def main():
     # Try to use reportlab for better PDFs
     try:
         # Document A - 10 pages
-        create_sample_pdf_with_text(
-            fixtures_dir / "document_a.pdf", 10, "Document A - Test File"
-        )
+        create_sample_pdf_with_text(fixtures_dir / "document_a.pdf", 10, "Document A - Test File")
         print("  ✓ Created document_a.pdf (10 pages with text)")
 
         # Document B - 10 pages
-        create_sample_pdf_with_text(
-            fixtures_dir / "document_b.pdf", 10, "Document B - Test File"
-        )
+        create_sample_pdf_with_text(fixtures_dir / "document_b.pdf", 10, "Document B - Test File")
         print("  ✓ Created document_b.pdf (10 pages with text)")
 
         # Document C - 5 pages
-        create_sample_pdf_with_text(
-            fixtures_dir / "document_c.pdf", 5, "Document C - Test File"
-        )
+        create_sample_pdf_with_text(fixtures_dir / "document_c.pdf", 5, "Document C - Test File")
         print("  ✓ Created document_c.pdf (5 pages with text)")
 
         # Small document - 3 pages
-        create_sample_pdf_with_text(
-            fixtures_dir / "small_doc.pdf", 3, "Small Document"
-        )
+        create_sample_pdf_with_text(fixtures_dir / "small_doc.pdf", 3, "Small Document")
         print("  ✓ Created small_doc.pdf (3 pages with text)")
 
         # Single page
@@ -129,4 +121,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

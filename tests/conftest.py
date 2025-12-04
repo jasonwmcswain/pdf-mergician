@@ -48,4 +48,3 @@ def multiple_pdfs(temp_pdf_dir):
             writer.write(f)
         pdfs.append(pdf_path)
     return pdfs
-

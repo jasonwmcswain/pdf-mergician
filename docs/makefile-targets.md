@@ -65,12 +65,23 @@ version-bump → clean → build → lint-fix → lint → coverage → publish-
 
 ### ✅ Validation Targets
 
+#### `check` - CI Checks
+**Command:** `make check`
+
+**What it does:**
+- Runs format check (`ruff format --check`)
+- Runs linting (`ruff check`)
+
+**Use case:** Run the same checks as GitHub Actions CI locally
+
+**✨ Recommended:** Run this before pushing to catch CI failures early!
+
 #### `clean-validate` - Full Validation
 **Command:** `make clean-validate`
 
 **Pipeline:**
 ```
-clean → build → lint-fix → lint → coverage
+clean → build → lint-fix → format → check-format → lint → coverage
 ```
 
 **Use case:** Full validation from clean slate (recommended before releases)
@@ -80,7 +91,7 @@ clean → build → lint-fix → lint → coverage
 
 **Pipeline:**
 ```
-build → lint-fix → lint → coverage
+build → lint-fix → format → check-format → lint → coverage
 ```
 
 **Use case:** Fast validation during development (no clean)
@@ -90,10 +101,10 @@ build → lint-fix → lint → coverage
 
 **Pipeline:**
 ```
-clean → lint → test
+clean → check → test
 ```
 
-**Use case:** Quick verification without building
+**Use case:** Quick verification (format + lint + tests)
 
 ---
 

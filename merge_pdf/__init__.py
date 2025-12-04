@@ -20,7 +20,7 @@ from merge_pdf.core import (
     split_pdf,
 )
 
-__version__ = "2025.12.03.2"
+__version__ = "2025.12.03.3"
 __all__ = [
     "merge",
     "merge_pattern",
@@ -28,4 +28,3 @@ __all__ = [
     "rotate_pages",
     "extract_pages",
 ]
-

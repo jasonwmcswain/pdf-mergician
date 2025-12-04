@@ -305,4 +305,3 @@ class TestExtractPages:
 
         with pytest.raises(FileNotFoundError):
             extract_pages(nonexistent, output, [1])
-

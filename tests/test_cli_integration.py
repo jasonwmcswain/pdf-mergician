@@ -81,9 +81,7 @@ class TestMergeIntegration:
 
         # Manually expand the glob (shell would do this normally)
         doc_files = sorted(fixtures_dir.glob("doc_*.pdf"))
-        result = runner.invoke(
-            cli, ["merge", str(output)] + [str(f) for f in doc_files]
-        )
+        result = runner.invoke(cli, ["merge", str(output)] + [str(f) for f in doc_files])
 
         assert result.exit_code == 0
         assert output.exists()
@@ -204,9 +202,7 @@ class TestSplitIntegration:
     def test_split_into_individual_pages(self, runner, test_pdfs, tmp_path):
         """Test splitting into individual pages."""
         output_dir = tmp_path / "split"
-        result = runner.invoke(
-            cli, ["split", str(test_pdfs["small.pdf"]), str(output_dir)]
-        )
+        result = runner.invoke(cli, ["split", str(test_pdfs["small.pdf"]), str(output_dir)])
 
         assert result.exit_code == 0
         assert "Created 3 file(s)" in result.output
@@ -504,9 +500,7 @@ class TestCLIWorkflows:
 
         # Step 2: Split
         split_dir = tmp_path / "split"
-        result = runner.invoke(
-            cli, ["split", str(merged), str(split_dir), "-p", "5"]
-        )
+        result = runner.invoke(cli, ["split", str(merged), str(split_dir), "-p", "5"])
         assert result.exit_code == 0
 
         # Step 3: Extract from one of the split files
@@ -555,4 +549,3 @@ class TestCLIWorkflows:
 
         reader = PdfReader(rotated)
         assert len(reader.pages) == 10
-

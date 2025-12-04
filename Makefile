@@ -1,4 +1,4 @@
-.PHONY: help clean build lint test coverage package publish install dev-install format check-format version version-bump version-show test-fixtures validate clean-validate venv venv-clean all all-test
+.PHONY: help clean build lint test coverage package publish install dev-install format check-format check version version-bump version-show test-fixtures validate clean-validate verify venv venv-clean all all-test
 
 # Virtual environment configuration
 VENV := ./venv
@@ -123,7 +123,7 @@ build: clean dev-install ## Build distribution packages (wheel and source)
 	@$(PYTHON) -m build
 	@echo "$(GREEN)✓ Build complete - packages in dist/$(NC)"
 
-package: version-bump lint test build ## Run full package preparation (bump version, lint, test, build)
+package: version-bump check-format lint test build ## Run full package preparation (bump version, check format, lint, test, build)
 	@echo "$(GREEN)✓ Package ready for distribution$(NC)"
 
 check-dist: build ## Check distribution packages with twine
@@ -147,13 +147,19 @@ publish: package check-dist ## Publish to PyPI (production)
 		echo "$(YELLOW)Publish cancelled$(NC)"; \
 	fi
 
-verify: clean lint test ## Run verification checks (clean, lint, test)
+check: dev-install ## Run all CI checks (format, lint) - same as GitHub Actions
+	@echo "$(YELLOW)Running CI checks...$(NC)"
+	@$(RUFF) format --check merge_pdf/ tests/
+	@$(RUFF) check merge_pdf/ tests/
+	@echo "$(GREEN)✓ All CI checks passed$(NC)"
+
+verify: clean check test ## Run verification checks (clean, format check, lint, test)
 	@echo "$(GREEN)✓ All verification checks passed$(NC)"
 
-validate: build lint-fix lint coverage ## Run validation (build, lint-fix, lint, coverage)
+validate: build lint-fix format check-format lint coverage ## Run validation (build, lint-fix, format, check-format, lint, coverage)
 	@echo "$(GREEN)✓ Validation complete$(NC)"
 
-clean-validate: clean build lint-fix lint coverage ## Run full validation with clean (clean, build, lint-fix, lint, coverage)
+clean-validate: clean build lint-fix format check-format lint coverage ## Run full validation with clean (clean, build, lint-fix, format, check-format, lint, coverage)
 	@echo "$(GREEN)✓ Clean validation complete$(NC)"
 
 all-test: version-bump clean-validate publish-test ## Full pipeline: version-bump, clean-validate, publish-test

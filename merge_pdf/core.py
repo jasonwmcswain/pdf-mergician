@@ -73,9 +73,7 @@ def merge(files: Sequence[PathLike], output: PathLike, *, preserve_metadata: boo
         writer.write(output_file)
 
 
-def merge_pattern(
-    pattern: Sequence[Tuple[PathLike, int, int]], output: PathLike
-) -> None:
+def merge_pattern(pattern: Sequence[Tuple[PathLike, int, int]], output: PathLike) -> None:
     """
     Merge PDFs using a pattern of (file, start_page, end_page) tuples.
 
@@ -121,9 +119,7 @@ def merge_pattern(
             raise ValueError(f"Page numbers must be >= 1, got: {start_page}-{end_page}")
 
         if start_page > end_page:
-            raise ValueError(
-                f"Start page ({start_page}) must be <= end page ({end_page})"
-            )
+            raise ValueError(f"Start page ({start_page}) must be <= end page ({end_page})")
 
         # Get or create cached reader
         path_str = str(path)
@@ -149,9 +145,7 @@ def merge_pattern(
         writer.write(output_file)
 
 
-def split_pdf(
-    input_file: PathLike, output_dir: PathLike, *, pages_per_file: int = 1
-) -> List[Path]:
+def split_pdf(input_file: PathLike, output_dir: PathLike, *, pages_per_file: int = 1) -> List[Path]:
     """
     Split a PDF into multiple files.
 
@@ -268,9 +262,7 @@ def rotate_pages(
         writer.write(f)
 
 
-def extract_pages(
-    input_file: PathLike, output_file: PathLike, pages: Sequence[int]
-) -> None:
+def extract_pages(input_file: PathLike, output_file: PathLike, pages: Sequence[int]) -> None:
     """
     Extract specific pages from a PDF into a new file.
 
@@ -310,4 +302,3 @@ def extract_pages(
     # Write the output PDF
     with output_path.open("wb") as f:
         writer.write(f)
-
