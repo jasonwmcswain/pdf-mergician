@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Version management script for merge-pdf.
+Version management script for pdf-mergician.
 
 Generates and manages versions in YYYY.MM.DD.x format where:
 - YYYY.MM.DD is the current date

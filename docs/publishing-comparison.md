@@ -1,6 +1,6 @@
 # Publishing Methods Comparison
 
-This document compares the two methods available for publishing `merge-pdf` to PyPI.
+This document compares the two methods available for publishing `pdf-mergician` to PyPI.
 
 ## Quick Comparison
 
@@ -78,7 +78,7 @@ Uses OpenID Connect (OIDC) to authenticate GitHub Actions workflows with PyPI wi
 ### Setup Guide
 
 📖 [GitHub Trusted Publisher Setup](github-trusted-publisher.md)
-🚀 [Quick Start Guide](../GITHUB_PUBLISHING_QUICKSTART.md)
+🚀 [Quick Start Guide](publishing-quickstart.md)
 
 ---
 

@@ -16,7 +16,7 @@ RED := \033[0;31m
 NC := \033[0m # No Color
 
 help: ## Show this help message
-	@echo "$(BLUE)merge-pdf - Makefile targets$(NC)"
+	@echo "$(BLUE)pdf-mergician - Makefile targets$(NC)"
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-15s$(NC) %s\n", $$1, $$2}'
 	@echo ""
@@ -61,12 +61,12 @@ clean-all: clean venv-clean ## Remove all artifacts including virtual environmen
 	@echo "$(GREEN)✓ Complete clean finished$(NC)"
 
 install: venv ## Install the package in the virtual environment
-	@echo "$(YELLOW)Installing merge-pdf...$(NC)"
+	@echo "$(YELLOW)Installing pdf-mergician...$(NC)"
 	@$(PIP) install .
 	@echo "$(GREEN)✓ Installation complete$(NC)"
 
 dev-install: venv ## Install the package with development dependencies
-	@echo "$(YELLOW)Installing merge-pdf with dev dependencies...$(NC)"
+	@echo "$(YELLOW)Installing pdf-mergician with dev dependencies...$(NC)"
 	@$(PIP) install -e ".[dev]"
 	@echo "$(GREEN)✓ Development installation complete$(NC)"
 

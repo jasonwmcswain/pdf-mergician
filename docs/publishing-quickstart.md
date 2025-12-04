@@ -20,9 +20,9 @@
 2. Scroll to **"Add a new pending publisher"**
 3. Fill in:
    ```
-   PyPI Project Name:     merge-pdf
+   PyPI Project Name:     pdf-mergician
    Owner:                 YOUR_GITHUB_USERNAME
-   Repository name:       merge-pdf
+   Repository name:       pdf-mergician
    Workflow name:         publish.yml
    Environment name:      pypi
    ```
@@ -42,9 +42,9 @@
 1. Go to: https://test.pypi.org/manage/account/publishing/
 2. Add pending publisher:
    ```
-   PyPI Project Name:     merge-pdf
+   PyPI Project Name:     pdf-mergician
    Owner:                 YOUR_GITHUB_USERNAME
-   Repository name:       merge-pdf
+   Repository name:       pdf-mergician
    Workflow name:         publish-test.yml
    Environment name:      testpypi
    ```
@@ -77,13 +77,13 @@ git push origin test-2025.12.03.1
 # Watch workflow in GitHub Actions tab
 ```
 
-Verify at: https://test.pypi.org/project/merge-pdf/
+Verify at: https://test.pypi.org/project/pdf-mergician/
 
 ### Publish to Production
 
 ```bash
 # Create GitHub Release
-# Go to: https://github.com/YOUR_USERNAME/merge-pdf/releases/new
+# Go to: https://github.com/YOUR_USERNAME/pdf-mergician/releases/new
 # - Tag: v2025.12.03.1
 # - Title: Release 2025.12.03.1
 # - Description: Release notes
@@ -92,7 +92,7 @@ Verify at: https://test.pypi.org/project/merge-pdf/
 # Workflow runs automatically!
 ```
 
-Verify at: https://pypi.org/project/merge-pdf/
+Verify at: https://pypi.org/project/pdf-mergician/
 
 ---
 

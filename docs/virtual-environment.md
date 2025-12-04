@@ -60,7 +60,7 @@ deactivate
 This project uses `./venv/` as the virtual environment directory:
 
 ```
-merge-pdf/
+pdf-mergician/
 ├── venv/              ← Virtual environment (not in git)
 │   ├── bin/           ← Executables (python, pip, pytest, etc.)
 │   ├── lib/           ← Installed packages
@@ -161,7 +161,7 @@ ls -la venv/
 
 ```bash
 ./venv/bin/pip list
-# Should show merge-pdf, pytest, ruff, etc.
+# Should show pdf-mergician, pytest, ruff, etc.
 ```
 
 ### Verify Makefile uses venv
@@ -258,8 +258,8 @@ make dev-install
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/merge-pdf.git
-cd merge-pdf
+git clone https://github.com/YOUR_USERNAME/pdf-mergician.git
+cd pdf-mergician
 
 # Create venv and install dependencies
 make venv

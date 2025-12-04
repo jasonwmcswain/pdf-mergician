@@ -1,6 +1,6 @@
 # Makefile Targets Reference
 
-Complete reference for all available make targets in merge-pdf.
+Complete reference for all available make targets in pdf-mergician.
 
 ## Quick Reference
 
@@ -324,7 +324,7 @@ make clean-validate
 make publish-test
 
 # 3. Verify installation
-pip install -i https://test.pypi.org/simple/ merge-pdf
+pip install -i https://test.pypi.org/simple/ pdf-mergician
 
 # 4. If good, publish
 make publish

@@ -1,2 +1,2 @@
-"""Tests for merge-pdf package."""
+"""Tests for pdf-mergician package."""
 

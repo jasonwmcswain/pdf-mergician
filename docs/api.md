@@ -1,11 +1,11 @@
 # Python API Documentation
 
-The `merge-pdf` package provides a clean Python API for programmatic PDF manipulation. All functions are available through the main package import.
+The `pdf-mergician` package provides a clean Python API for programmatic PDF manipulation. All functions are available through the main package import.
 
 ## Installation
 
 ```bash
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 ## Quick Start
@@ -391,13 +391,13 @@ merge_pattern(pattern, "booklet.pdf")
 
 ## Integration with pypdf
 
-Since `merge-pdf` is built on pypdf, you can combine it with direct pypdf usage:
+Since `pdf-mergician` is built on pypdf, you can combine it with direct pypdf usage:
 
 ```python
 from pypdf import PdfReader, PdfWriter
 from merge_pdf import merge
 
-# Use merge-pdf for basic operations
+# Use pdf-mergician for basic operations
 merge(["doc1.pdf", "doc2.pdf"], "temp.pdf")
 
 # Then use pypdf for advanced operations

@@ -1,6 +1,6 @@
 # Examples and Use Cases
 
-This document provides practical examples and real-world use cases for `merge-pdf`.
+This document provides practical examples and real-world use cases for `pdf-mergician`.
 
 ---
 
@@ -23,13 +23,13 @@ Combine multiple PDFs into one:
 
 ```bash
 # Merge three documents
-merge-pdf merge combined.pdf intro.pdf main.pdf conclusion.pdf
+pdf-mergician merge combined.pdf intro.pdf main.pdf conclusion.pdf
 
 # Merge all PDFs in current directory
-merge-pdf merge all.pdf *.pdf
+pdf-mergician merge all.pdf *.pdf
 
 # Merge with wildcards
-merge-pdf merge chapters.pdf chapter*.pdf
+pdf-mergician merge chapters.pdf chapter*.pdf
 ```
 
 ### Extract Pages
@@ -38,13 +38,13 @@ Pull out specific pages:
 
 ```bash
 # Extract first page (cover)
-merge-pdf extract report.pdf cover.pdf --pages 1
+pdf-mergician extract report.pdf cover.pdf --pages 1
 
 # Extract table of contents (pages 2-5)
-merge-pdf extract book.pdf toc.pdf --pages 2-5
+pdf-mergician extract book.pdf toc.pdf --pages 2-5
 
 # Extract multiple sections
-merge-pdf extract document.pdf selected.pdf --pages 1,5-10,20-25
+pdf-mergician extract document.pdf selected.pdf --pages 1,5-10,20-25
 ```
 
 ### Split Documents
@@ -53,13 +53,13 @@ Divide large PDFs:
 
 ```bash
 # Split into individual pages
-merge-pdf split presentation.pdf slides/
+pdf-mergician split presentation.pdf slides/
 
 # Split into 10-page sections
-merge-pdf split manual.pdf sections/ --pages-per-file 10
+pdf-mergician split manual.pdf sections/ --pages-per-file 10
 
 # Split into chapters (20 pages each)
-merge-pdf split book.pdf chapters/ -p 20
+pdf-mergician split book.pdf chapters/ -p 20
 ```
 
 ### Rotate Pages
@@ -68,13 +68,13 @@ Fix page orientation:
 
 ```bash
 # Rotate entire document
-merge-pdf rotate scanned.pdf fixed.pdf --angle 90
+pdf-mergician rotate scanned.pdf fixed.pdf --angle 90
 
 # Rotate specific pages
-merge-pdf rotate document.pdf fixed.pdf --angle 180 --pages 3,7,12
+pdf-mergician rotate document.pdf fixed.pdf --angle 180 --pages 3,7,12
 
 # Rotate counter-clockwise
-merge-pdf rotate input.pdf output.pdf --angle -90
+pdf-mergician rotate input.pdf output.pdf --angle -90
 ```
 
 ---
@@ -87,7 +87,7 @@ Alternate pages from two documents:
 
 ```bash
 # Create side-by-side comparison
-merge-pdf pattern comparison.pdf \
+pdf-mergician pattern comparison.pdf \
     -s original.pdf:1 -s revised.pdf:1 \
     -s original.pdf:2 -s revised.pdf:2 \
     -s original.pdf:3 -s revised.pdf:3 \
@@ -101,7 +101,7 @@ Assemble documents from multiple sources:
 
 ```bash
 # Create report from various sources
-merge-pdf pattern final_report.pdf \
+pdf-mergician pattern final_report.pdf \
     -s cover.pdf:1 \
     -s toc.pdf:1-2 \
     -s executive_summary.pdf:1-3 \
@@ -116,7 +116,7 @@ Collect first pages from multiple documents:
 
 ```bash
 # Create cover sheet compilation
-merge-pdf pattern all_covers.pdf \
+pdf-mergician pattern all_covers.pdf \
     -s report1.pdf:1 \
     -s report2.pdf:1 \
     -s report3.pdf:1 \
@@ -130,7 +130,7 @@ Rearrange pages in custom order:
 
 ```bash
 # Reverse order of first 5 pages
-merge-pdf pattern reordered.pdf \
+pdf-mergician pattern reordered.pdf \
     -s document.pdf:5 \
     -s document.pdf:4 \
     -s document.pdf:3 \
@@ -151,7 +151,7 @@ Rotate all PDFs in a directory:
 #!/bin/bash
 for pdf in *.pdf; do
     echo "Rotating $pdf..."
-    merge-pdf rotate "$pdf" "rotated_$pdf" --angle 90
+    pdf-mergician rotate "$pdf" "rotated_$pdf" --angle 90
 done
 ```
 
@@ -162,7 +162,7 @@ Split all PDFs:
 for pdf in *.pdf; do
     dirname="split_${pdf%.pdf}"
     echo "Splitting $pdf into $dirname..."
-    merge-pdf split "$pdf" "$dirname/" --pages-per-file 5
+    pdf-mergician split "$pdf" "$dirname/" --pages-per-file 5
 done
 ```
 
@@ -173,7 +173,7 @@ Extract first pages:
 for pdf in *.pdf; do
     output="cover_${pdf}"
     echo "Extracting cover from $pdf..."
-    merge-pdf extract "$pdf" "$output" --pages 1
+    pdf-mergician extract "$pdf" "$output" --pages 1
 done
 ```
 
@@ -188,7 +188,7 @@ for pdf in *.pdf; do
     size=$(stat -f%z "$pdf")
     if [ $size -gt 1048576 ]; then
         echo "Processing large file: $pdf"
-        merge-pdf split "$pdf" "split_${pdf%.pdf}/" -p 10
+        pdf-mergician split "$pdf" "split_${pdf%.pdf}/" -p 10
     fi
 done
 ```
@@ -203,13 +203,13 @@ Prepare documents for booklet printing:
 
 ```bash
 # Extract odd pages (front side)
-merge-pdf extract document.pdf odd_pages.pdf --pages 1,3,5,7,9,11,13,15
+pdf-mergician extract document.pdf odd_pages.pdf --pages 1,3,5,7,9,11,13,15
 
 # Extract even pages (back side)
-merge-pdf extract document.pdf even_pages.pdf --pages 2,4,6,8,10,12,14,16
+pdf-mergician extract document.pdf even_pages.pdf --pages 2,4,6,8,10,12,14,16
 
 # Rotate even pages for back-to-back printing
-merge-pdf rotate even_pages.pdf even_rotated.pdf --angle 180
+pdf-mergician rotate even_pages.pdf even_rotated.pdf --angle 180
 ```
 
 ### Preparing Presentations
@@ -218,7 +218,7 @@ Combine slides with notes:
 
 ```bash
 # Merge presentation slides with speaker notes
-merge-pdf pattern presentation_with_notes.pdf \
+pdf-mergician pattern presentation_with_notes.pdf \
     -s slides.pdf:1 -s notes.pdf:1 \
     -s slides.pdf:2 -s notes.pdf:2 \
     -s slides.pdf:3 -s notes.pdf:3
@@ -230,7 +230,7 @@ Build complete documents from parts:
 
 ```bash
 # Assemble contract from templates and filled forms
-merge-pdf merge contract.pdf \
+pdf-mergician merge contract.pdf \
     cover_letter.pdf \
     terms_and_conditions.pdf \
     filled_form.pdf \
@@ -245,7 +245,7 @@ Extract samples for review:
 
 ```bash
 # Extract every 10th page for quick review
-merge-pdf extract large_document.pdf sample.pdf --pages 10,20,30,40,50,60,70,80,90,100
+pdf-mergician extract large_document.pdf sample.pdf --pages 10,20,30,40,50,60,70,80,90,100
 ```
 
 ---
@@ -264,7 +264,7 @@ OUTPUT="monthly_report_${MONTH}.pdf"
 echo "Generating report for $MONTH..."
 
 # Merge all sections
-merge-pdf merge "$OUTPUT" \
+pdf-mergician merge "$OUTPUT" \
     templates/cover.pdf \
     data/summary_${MONTH}.pdf \
     data/details_${MONTH}.pdf \
@@ -292,7 +292,7 @@ for pdf in *.pdf; do
     else
         mv "$pdf" long/
         # Split long documents
-        merge-pdf split "long/$pdf" "long/split_${pdf%.pdf}/" -p 25
+        pdf-mergician split "long/$pdf" "long/split_${pdf%.pdf}/" -p 25
     fi
 done
 ```
@@ -308,7 +308,7 @@ ARCHIVE_DIR="archive_${DATE}"
 mkdir -p "$ARCHIVE_DIR"
 
 # Merge all current PDFs
-merge-pdf merge "${ARCHIVE_DIR}/combined_${DATE}.pdf" *.pdf
+pdf-mergician merge "${ARCHIVE_DIR}/combined_${DATE}.pdf" *.pdf
 
 # Also keep individual copies
 cp *.pdf "$ARCHIVE_DIR/"
@@ -471,7 +471,7 @@ safe_merge(files, "output.pdf")
 
 ```bash
 # Combine paper sections
-merge-pdf merge paper.pdf \
+pdf-mergician merge paper.pdf \
     title_page.pdf \
     abstract.pdf \
     introduction.pdf \
@@ -485,7 +485,7 @@ merge-pdf merge paper.pdf \
 
 ```bash
 # Assemble contract with exhibits
-merge-pdf merge complete_contract.pdf \
+pdf-mergician merge complete_contract.pdf \
     main_agreement.pdf \
     exhibit_a.pdf \
     exhibit_b.pdf \
@@ -496,7 +496,7 @@ merge-pdf merge complete_contract.pdf \
 
 ```bash
 # Create quarterly report
-merge-pdf pattern Q1_2024_Report.pdf \
+pdf-mergician pattern Q1_2024_Report.pdf \
     -s cover.pdf:1 \
     -s executive_summary.pdf:1-2 \
     -s financial_data.pdf:1-15 \
@@ -508,10 +508,10 @@ merge-pdf pattern Q1_2024_Report.pdf \
 
 ```bash
 # Combine photo pages
-merge-pdf merge photo_album.pdf page_*.pdf
+pdf-mergician merge photo_album.pdf page_*.pdf
 
 # Or with specific order
-merge-pdf merge album.pdf \
+pdf-mergician merge album.pdf \
     cover.pdf \
     page_01.pdf \
     page_02.pdf \

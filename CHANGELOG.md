@@ -17,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [2025.12.03.1] - 2025-12-03
 
 ### Added
-- Initial release of merge-pdf
+- Initial release of pdf-mergician
 - Core PDF manipulation functions:
   - `merge()` - Merge multiple PDFs
   - `merge_pattern()` - Advanced pattern-based merging
@@ -69,6 +69,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute to t
 
 ---
 
-[Unreleased]: https://github.com/jmcswain/merge-pdf/compare/v2025.12.03.1...HEAD
-[2025.12.03.1]: https://github.com/jmcswain/merge-pdf/releases/tag/v2025.12.03.1
+[Unreleased]: https://github.com/jmcswain/pdf-mergician/compare/v2025.12.03.1...HEAD
+[2025.12.03.1]: https://github.com/jmcswain/pdf-mergician/releases/tag/v2025.12.03.1
 

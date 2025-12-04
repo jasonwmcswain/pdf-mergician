@@ -91,9 +91,9 @@ If your package doesn't exist on PyPI yet:
    - Scroll to **"Add a new pending publisher"**
    - Fill in the form:
      ```
-     PyPI Project Name:     merge-pdf
+     PyPI Project Name:     pdf-mergician
      Owner:                 YOUR_GITHUB_USERNAME
-     Repository name:       merge-pdf
+     Repository name:       pdf-mergician
      Workflow name:         publish.yml
      Environment name:      pypi
      ```
@@ -109,15 +109,15 @@ If your package doesn't exist on PyPI yet:
 If your package already exists on PyPI:
 
 1. **Go to Your Project Settings**:
-   - Visit: https://pypi.org/manage/project/merge-pdf/settings/publishing/
-   - (Replace `merge-pdf` with your actual project name)
+   - Visit: https://pypi.org/manage/project/pdf-mergician/settings/publishing/
+   - (Replace `pdf-mergician` with your actual project name)
 
 2. **Add a Publisher**:
    - Scroll to **"Add a new publisher"**
    - Fill in the form:
      ```
      Owner:                 YOUR_GITHUB_USERNAME
-     Repository name:       merge-pdf
+     Repository name:       pdf-mergician
      Workflow name:         publish.yml
      Environment name:      pypi
      ```
@@ -134,9 +134,9 @@ Repeat the same process for TestPyPI (for testing before production):
 
 2. **Add a Pending Publisher**:
    ```
-   PyPI Project Name:     merge-pdf
+   PyPI Project Name:     pdf-mergician
    Owner:                 YOUR_GITHUB_USERNAME
-   Repository name:       merge-pdf
+   Repository name:       pdf-mergician
    Workflow name:         publish-test.yml
    Environment name:      testpypi
    ```
@@ -194,7 +194,7 @@ jobs:
 
     environment:
       name: pypi  # Must match PyPI configuration
-      url: https://pypi.org/p/merge-pdf
+      url: https://pypi.org/p/pdf-mergician
 
     steps:
     - uses: actions/checkout@v4
@@ -239,7 +239,7 @@ jobs:
 
     environment:
       name: testpypi  # Must match TestPyPI configuration
-      url: https://test.pypi.org/p/merge-pdf
+      url: https://test.pypi.org/p/pdf-mergician
 
     steps:
     - uses: actions/checkout@v4
@@ -278,12 +278,12 @@ jobs:
    - Watch the "Publish to TestPyPI" workflow run
 
 3. **Verify on TestPyPI**:
-   - Visit: https://test.pypi.org/project/merge-pdf/
+   - Visit: https://test.pypi.org/project/pdf-mergician/
    - Check that your package appears
 
 4. **Test installation**:
    ```bash
-   pip install --index-url https://test.pypi.org/simple/ merge-pdf
+   pip install --index-url https://test.pypi.org/simple/ pdf-mergician
    ```
 
 ### Publishing to Production PyPI
@@ -300,12 +300,12 @@ jobs:
    - Monitor in the **Actions** tab
 
 3. **Verify on PyPI**:
-   - Visit: https://pypi.org/project/merge-pdf/
+   - Visit: https://pypi.org/project/pdf-mergician/
    - Your package is now live!
 
 4. **Install from PyPI**:
    ```bash
-   pip install merge-pdf
+   pip install pdf-mergician
    ```
 
 ---

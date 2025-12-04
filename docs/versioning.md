@@ -1,6 +1,6 @@
 # Version Management
 
-merge-pdf uses a date-based versioning system with the format: **YYYY.MM.DD.x**
+pdf-mergician uses a date-based versioning system with the format: **YYYY.MM.DD.x**
 
 ## Version Format
 

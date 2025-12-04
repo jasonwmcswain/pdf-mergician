@@ -1,15 +1,15 @@
 # Installation Guide
 
-This guide covers various ways to install `merge-pdf`.
+This guide covers various ways to install `pdf-mergician`.
 
 ---
 
 ## Quick Install
 
-The simplest way to install merge-pdf is via pip:
+The simplest way to install pdf-mergician is via pip:
 
 ```bash
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 ---
@@ -21,19 +21,19 @@ pip install merge-pdf
 Install the latest stable release from PyPI:
 
 ```bash
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 Upgrade to the latest version:
 
 ```bash
-pip install --upgrade merge-pdf
+pip install --upgrade pdf-mergician
 ```
 
 Install a specific version:
 
 ```bash
-pip install merge-pdf==0.1.0
+pip install pdf-mergician==0.1.0
 ```
 
 ### From Source
@@ -41,14 +41,14 @@ pip install merge-pdf==0.1.0
 Install the latest development version from GitHub:
 
 ```bash
-pip install git+https://github.com/jmcswain/merge-pdf.git
+pip install git+https://github.com/jmcswain/pdf-mergician.git
 ```
 
 Or clone and install:
 
 ```bash
-git clone https://github.com/jmcswain/merge-pdf.git
-cd merge-pdf
+git clone https://github.com/jmcswain/pdf-mergician.git
+cd pdf-mergician
 pip install .
 ```
 
@@ -57,8 +57,8 @@ pip install .
 For contributing or development:
 
 ```bash
-git clone https://github.com/jmcswain/merge-pdf.git
-cd merge-pdf
+git clone https://github.com/jmcswain/pdf-mergician.git
+cd pdf-mergician
 pip install -e ".[dev]"
 ```
 
@@ -86,21 +86,21 @@ source venv/bin/activate
 # Activate (Windows)
 venv\Scripts\activate
 
-# Install merge-pdf
-pip install merge-pdf
+# Install pdf-mergician
+pip install pdf-mergician
 ```
 
 ### Using conda
 
 ```bash
 # Create environment
-conda create -n merge-pdf python=3.11
+conda create -n pdf-mergician python=3.11
 
 # Activate
-conda activate merge-pdf
+conda activate pdf-mergician
 
 # Install
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 ---
@@ -120,18 +120,18 @@ python --version
 
 ### Operating Systems
 
-merge-pdf works on:
+pdf-mergician works on:
 - **Linux** (Ubuntu, Debian, Fedora, etc.)
 - **macOS** (10.15 Catalina and later)
 - **Windows** (10 and later)
 
 ### Dependencies
 
-merge-pdf requires:
+pdf-mergician requires:
 - [pypdf](https://github.com/py-pdf/pypdf) >= 4.0.0
 - [click](https://click.palletsprojects.com/) >= 8.1.0
 
-These are installed automatically when you install merge-pdf.
+These are installed automatically when you install pdf-mergician.
 
 ---
 
@@ -141,13 +141,13 @@ Verify the installation:
 
 ```bash
 # Check version
-merge-pdf --version
+pdf-mergician --version
 
 # Run help
-merge-pdf --help
+pdf-mergician --help
 
 # Test basic functionality
-merge-pdf merge test.pdf file1.pdf file2.pdf
+pdf-mergician merge test.pdf file1.pdf file2.pdf
 ```
 
 ---
@@ -159,14 +159,14 @@ merge-pdf merge test.pdf file1.pdf file2.pdf
 If you get permission errors on Linux/Mac:
 
 ```bash
-pip install --user merge-pdf
+pip install --user pdf-mergician
 ```
 
 Or use a virtual environment (recommended).
 
 ### Command Not Found
 
-If `merge-pdf` command is not found after installation:
+If `pdf-mergician` command is not found after installation:
 
 1. Check if the script directory is in your PATH:
    ```bash
@@ -191,7 +191,7 @@ If you have dependency conflicts:
 # Create a fresh virtual environment
 python -m venv fresh_env
 source fresh_env/bin/activate  # or fresh_env\Scripts\activate on Windows
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 ### Old pip Version
@@ -200,40 +200,40 @@ Update pip if you have issues:
 
 ```bash
 pip install --upgrade pip
-pip install merge-pdf
+pip install pdf-mergician
 ```
 
 ---
 
 ## Uninstallation
 
-To uninstall merge-pdf:
+To uninstall pdf-mergician:
 
 ```bash
-pip uninstall merge-pdf
+pip uninstall pdf-mergician
 ```
 
 ---
 
 ## Docker (Optional)
 
-You can also use merge-pdf in a Docker container:
+You can also use pdf-mergician in a Docker container:
 
 ```dockerfile
 FROM python:3.11-slim
 
-RUN pip install merge-pdf
+RUN pip install pdf-mergician
 
 WORKDIR /pdfs
 
-ENTRYPOINT ["merge-pdf"]
+ENTRYPOINT ["pdf-mergician"]
 ```
 
 Build and use:
 
 ```bash
-docker build -t merge-pdf .
-docker run -v $(pwd):/pdfs merge-pdf merge output.pdf file1.pdf file2.pdf
+docker build -t pdf-mergician .
+docker run -v $(pwd):/pdfs pdf-mergician merge output.pdf file1.pdf file2.pdf
 ```
 
 ---
@@ -254,6 +254,6 @@ After installation:
 If you encounter issues:
 
 1. Check [Troubleshooting](#troubleshooting) above
-2. Search [GitHub Issues](https://github.com/jmcswain/merge-pdf/issues)
+2. Search [GitHub Issues](https://github.com/jmcswain/pdf-mergician/issues)
 3. Open a new issue with details about your problem
 

@@ -700,7 +700,7 @@ Before you can publish to PyPI, you need to configure authentication. We support
 4. Automatic publishing! 🎉
 
 📖 **Complete Guide**: [GitHub Trusted Publisher Setup](docs/github-trusted-publisher.md)
-🚀 **Quick Start**: [GITHUB_PUBLISHING_QUICKSTART.md](GITHUB_PUBLISHING_QUICKSTART.md)
+🚀 **Quick Start**: [Publishing Quick Start](docs/publishing-quickstart.md)
 
 #### Method 2: API Tokens (Traditional)
 

@@ -1,6 +1,6 @@
 # Visual Publishing Guide
 
-A visual, step-by-step guide for publishing `merge-pdf` to PyPI using Trusted Publishers.
+A visual, step-by-step guide for publishing `pdf-mergician` to PyPI using Trusted Publishers.
 
 ## 🎯 Overview: The Complete Flow
 
@@ -52,11 +52,11 @@ A visual, step-by-step guide for publishing `merge-pdf` to PyPI using Trusted Pu
 │  PyPI - Add a new pending publisher                              │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  PyPI Project Name:     [merge-pdf                        ]     │
+│  PyPI Project Name:     [pdf-mergician                        ]     │
 │                                                                  │
 │  Owner:                 [YOUR_GITHUB_USERNAME             ]     │
 │                                                                  │
-│  Repository name:       [merge-pdf                        ]     │
+│  Repository name:       [pdf-mergician                        ]     │
 │                                                                  │
 │  Workflow name:         [publish.yml                      ]     │
 │                                                                  │
@@ -92,11 +92,11 @@ Navigation:
 │  TestPyPI - Add a new pending publisher                          │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  PyPI Project Name:     [merge-pdf                        ]     │
+│  PyPI Project Name:     [pdf-mergician                        ]     │
 │                                                                  │
 │  Owner:                 [YOUR_GITHUB_USERNAME             ]     │
 │                                                                  │
-│  Repository name:       [merge-pdf                        ]     │
+│  Repository name:       [pdf-mergician                        ]     │
 │                                                                  │
 │  Workflow name:         [publish-test.yml                 ]     │
 │                                                                  │
@@ -158,7 +158,7 @@ Navigation:
 ### Where to Go
 
 ```
-URL: https://github.com/YOUR_USERNAME/merge-pdf/settings/environments
+URL: https://github.com/YOUR_USERNAME/pdf-mergician/settings/environments
 
 Navigation:
 1. Go to your GitHub repository
@@ -213,7 +213,7 @@ Step 4: OIDC Authentication
 Step 5: Package Published
 ┌──────────────────────────────────────┐
 │  ✅ Published to TestPyPI             │
-│  URL: test.pypi.org/p/merge-pdf/     │
+│  URL: test.pypi.org/p/pdf-mergician/     │
 └──────────────────────────────────────┘
                 │
                 ▼
@@ -221,9 +221,9 @@ Step 6: Verify Installation
 ┌──────────────────────────────────────┐
 │ $ pip install --index-url \          │
 │   https://test.pypi.org/simple/ \    │
-│   merge-pdf                          │
-│ $ merge-pdf --version                │
-│ ✓ merge-pdf, version 2025.12.03.1   │
+│   pdf-mergician                          │
+│ $ pdf-mergician --version                │
+│ ✓ pdf-mergician, version 2025.12.03.1   │
 └──────────────────────────────────────┘
 ```
 
@@ -285,15 +285,15 @@ Step 5: OIDC Authentication
 Step 6: Package Published
 ┌──────────────────────────────────────┐
 │  ✅ Published to PyPI                 │
-│  URL: pypi.org/project/merge-pdf/    │
+│  URL: pypi.org/project/pdf-mergician/    │
 └──────────────────────────────────────┘
                 │
                 ▼
 Step 7: Verify Installation
 ┌──────────────────────────────────────┐
-│ $ pip install merge-pdf              │
-│ $ merge-pdf --version                │
-│ ✓ merge-pdf, version 2025.12.03.2   │
+│ $ pip install pdf-mergician              │
+│ $ pdf-mergician --version                │
+│ ✓ pdf-mergician, version 2025.12.03.2   │
 └──────────────────────────────────────┘
                 │
                 ▼
@@ -356,7 +356,7 @@ Step 8: Announce Release
    │  PyPI API Token      │
    │                      │
    │  Lifetime: 15 min    │
-   │  Scope: merge-pdf    │
+   │  Scope: pdf-mergician    │
    │  Permissions: write  │
    └──────────┬───────────┘
               │
@@ -366,7 +366,7 @@ Step 8: Announce Release
    ┌──────────────────────┐
    │  PyPI Package Index  │
    │                      │
-   │  merge-pdf           │
+   │  pdf-mergician           │
    │  v2025.12.03.2       │
    └──────────┬───────────┘
               │
@@ -393,9 +393,9 @@ Step 8: Announce Release
 PyPI Configuration                 GitHub Workflow
 ─────────────────────────────────────────────────────────────────
 
-Owner: YOUR_USERNAME        ←→    Repository: YOUR_USERNAME/merge-pdf
+Owner: YOUR_USERNAME        ←→    Repository: YOUR_USERNAME/pdf-mergician
 
-Repository: merge-pdf       ←→    Repository: YOUR_USERNAME/merge-pdf
+Repository: pdf-mergician       ←→    Repository: YOUR_USERNAME/pdf-mergician
 
 Workflow: publish.yml       ←→    File: .github/workflows/publish.yml
 
@@ -446,11 +446,11 @@ Common Mistakes:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  PyPI - merge-pdf                                                │
+│  PyPI - pdf-mergician                                                │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  merge-pdf 2025.12.03.2                                         │
-│  pip install merge-pdf                                           │
+│  pdf-mergician 2025.12.03.2                                         │
+│  pip install pdf-mergician                                           │
 │                                                                  │
 │  PDF manipulation made easy                                      │
 │                                                                  │
@@ -550,7 +550,7 @@ PyPI
 
 Installation
 ┌────────────────────────────────────┐
-│ $ pip install merge-pdf            │
+│ $ pip install pdf-mergician            │
 │ ✓ Installation successful          │
 │ ✓ Command available                │
 │ ✓ Version matches                  │
@@ -572,9 +572,9 @@ Installation
 ║                                                                ║
 ║  URL: https://pypi.org/manage/account/publishing/              ║
 ║                                                                ║
-║  PyPI Project Name:     merge-pdf                             ║
+║  PyPI Project Name:     pdf-mergician                             ║
 ║  Owner:                 YOUR_GITHUB_USERNAME                  ║
-║  Repository name:       merge-pdf                             ║
+║  Repository name:       pdf-mergician                             ║
 ║  Workflow name:         publish.yml                           ║
 ║  Environment name:      pypi                                  ║
 ║                                                                ║
@@ -590,9 +590,9 @@ Installation
 ║                                                                ║
 ║  URL: https://test.pypi.org/manage/account/publishing/         ║
 ║                                                                ║
-║  PyPI Project Name:     merge-pdf                             ║
+║  PyPI Project Name:     pdf-mergician                             ║
 ║  Owner:                 YOUR_GITHUB_USERNAME                  ║
-║  Repository name:       merge-pdf                             ║
+║  Repository name:       pdf-mergician                             ║
 ║  Workflow name:         publish-test.yml                      ║
 ║  Environment name:      testpypi                              ║
 ║                                                                ║

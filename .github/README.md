@@ -1,6 +1,6 @@
 # GitHub Actions Workflows
 
-This directory contains CI/CD workflows for the `merge-pdf` project.
+This directory contains CI/CD workflows for the `pdf-mergician` project.
 
 ## Workflows
 
@@ -67,9 +67,9 @@ Runs on every push and pull request to `main` and `develop` branches.
    - Go to: https://pypi.org/manage/account/publishing/
    - Add pending publisher:
      ```
-     PyPI Project Name:     merge-pdf
+     PyPI Project Name:     pdf-mergician
      Owner:                 YOUR_GITHUB_USERNAME
-     Repository name:       merge-pdf
+     Repository name:       pdf-mergician
      Workflow name:         publish.yml
      Environment name:      pypi
      ```
@@ -78,9 +78,9 @@ Runs on every push and pull request to `main` and `develop` branches.
    - Go to: https://test.pypi.org/manage/account/publishing/
    - Add pending publisher:
      ```
-     PyPI Project Name:     merge-pdf
+     PyPI Project Name:     pdf-mergician
      Owner:                 YOUR_GITHUB_USERNAME
-     Repository name:       merge-pdf
+     Repository name:       pdf-mergician
      Workflow name:         publish-test.yml
      Environment name:      testpypi
      ```
@@ -123,7 +123,7 @@ git tag test-2025.12.03.1
 git push origin test-2025.12.03.1
 
 # Workflow runs automatically
-# Verify at: https://test.pypi.org/project/merge-pdf/
+# Verify at: https://test.pypi.org/project/pdf-mergician/
 ```
 
 ### Publishing to Production PyPI
@@ -161,7 +161,7 @@ gh release create v$(grep '^version' pyproject.toml | cut -d'"' -f2) \
 - View workflow runs in the **Actions** tab
 - Check build status badges in the main README
 - Review coverage reports on Codecov
-- Monitor releases on [PyPI](https://pypi.org/project/merge-pdf/)
+- Monitor releases on [PyPI](https://pypi.org/project/pdf-mergician/)
 
 ## Troubleshooting
 

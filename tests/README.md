@@ -1,6 +1,6 @@
 # Test Suite Documentation
 
-This directory contains the comprehensive test suite for merge-pdf.
+This directory contains the comprehensive test suite for pdf-mergician.
 
 ## Test Structure
 

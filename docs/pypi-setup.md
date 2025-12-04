@@ -1,6 +1,6 @@
 # PyPI Setup Guide
 
-Complete guide for setting up PyPI and TestPyPI credentials for publishing merge-pdf.
+Complete guide for setting up PyPI and TestPyPI credentials for publishing pdf-mergician.
 
 ## Overview
 
@@ -71,8 +71,8 @@ PyPI requires 2FA to create API tokens for security reasons.
 3. Scroll to "API tokens" section
 4. Click "Add API token"
 5. Enter token details:
-   - **Token name:** `merge-pdf-test` (or any descriptive name)
-   - **Scope:** "Entire account" (for first time) or "Project: merge-pdf" (after first upload)
+   - **Token name:** `pdf-mergician-test` (or any descriptive name)
+   - **Scope:** "Entire account" (for first time) or "Project: pdf-mergician" (after first upload)
 6. Click "Add token"
 7. **IMPORTANT:** Copy the token immediately! Format: `pypi-AgEIcHlwaS5vcmc...`
 8. Store it securely - you won't be able to see it again!
@@ -84,8 +84,8 @@ PyPI requires 2FA to create API tokens for security reasons.
 3. Scroll to "API tokens" section
 4. Click "Add API token"
 5. Enter token details:
-   - **Token name:** `merge-pdf-production` (or any descriptive name)
-   - **Scope:** "Entire account" (for first time) or "Project: merge-pdf" (after first upload)
+   - **Token name:** `pdf-mergician-production` (or any descriptive name)
+   - **Scope:** "Entire account" (for first time) or "Project: pdf-mergician" (after first upload)
 6. Click "Add token"
 7. **IMPORTANT:** Copy the token immediately! Format: `pypi-AgEIcHlwaS5vcmc...`
 8. Store it securely - you won't be able to see it again!
@@ -215,7 +215,7 @@ Uploading merge_pdf-2025.12.03.3.tar.gz
 
 ### Verify on TestPyPI
 
-1. Go to https://test.pypi.org/project/merge-pdf/
+1. Go to https://test.pypi.org/project/pdf-mergician/
 2. You should see your package listed!
 
 ### Test Installation from TestPyPI
@@ -226,10 +226,10 @@ python -m venv test_env
 source test_env/bin/activate  # or test_env\Scripts\activate on Windows
 
 # Install from TestPyPI
-pip install -i https://test.pypi.org/simple/ merge-pdf
+pip install -i https://test.pypi.org/simple/ pdf-mergician
 
 # Test the package
-merge-pdf --version
+pdf-mergician --version
 
 # Clean up
 deactivate
@@ -266,7 +266,7 @@ Type `y` and press Enter to confirm.
 
 After first upload, create project-specific tokens:
 
-1. Go to PyPI project page: https://pypi.org/project/merge-pdf/
+1. Go to PyPI project page: https://pypi.org/project/pdf-mergician/
 2. Go to "Manage" → "Settings"
 3. Create a new API token scoped to this project only
 4. Replace the account-wide token in `.pypirc`
@@ -380,8 +380,8 @@ make all
 
 - **TestPyPI:** https://test.pypi.org
 - **PyPI:** https://pypi.org
-- **TestPyPI Package:** https://test.pypi.org/project/merge-pdf/
-- **PyPI Package:** https://pypi.org/project/merge-pdf/
+- **TestPyPI Package:** https://test.pypi.org/project/pdf-mergician/
+- **PyPI Package:** https://pypi.org/project/pdf-mergician/
 
 ---
 
@@ -420,7 +420,7 @@ If you encounter issues:
 
 1. Check [Troubleshooting](#troubleshooting) section
 2. Review [PyPI Help](https://pypi.org/help/)
-3. Check [GitHub Issues](https://github.com/jmcswain/merge-pdf/issues)
+3. Check [GitHub Issues](https://github.com/jmcswain/pdf-mergician/issues)
 4. Contact PyPI support: https://pypi.org/help/#support
 
 ---

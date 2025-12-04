@@ -1,5 +1,5 @@
 """
-merge-pdf: A powerful CLI-first PDF merging and manipulation tool.
+pdf-mergician: A powerful CLI-first PDF merging and manipulation tool.
 
 This package provides both a command-line interface and a Python API
 for merging, splitting, and manipulating PDF files with ease.
@@ -20,7 +20,7 @@ from merge_pdf.core import (
     split_pdf,
 )
 
-__version__ = "2025.12.03.9"
+__version__ = "2025.12.03.1"
 __all__ = [
     "merge",
     "merge_pattern",

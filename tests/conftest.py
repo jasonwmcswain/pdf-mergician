@@ -1,4 +1,4 @@
-"""Pytest configuration and fixtures for merge-pdf tests."""
+"""Pytest configuration and fixtures for pdf-mergician tests."""
 
 import pytest
 from pypdf import PdfWriter

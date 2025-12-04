@@ -1,6 +1,6 @@
-# Contributing to merge-pdf
+# Contributing to pdf-mergician
 
-Thank you for your interest in contributing to merge-pdf! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to pdf-mergician! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -19,7 +19,7 @@ Before creating bug reports, please check existing issues to avoid duplicates. W
 - **Steps to reproduce** the behavior
 - **Expected behavior**
 - **Actual behavior**
-- **Environment details** (OS, Python version, merge-pdf version)
+- **Environment details** (OS, Python version, pdf-mergician version)
 - **Sample files** if applicable (ensure no sensitive data)
 
 ### Suggesting Enhancements
@@ -53,8 +53,8 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/merge-pdf.git
-cd merge-pdf
+git clone https://github.com/YOUR_USERNAME/pdf-mergician.git
+cd pdf-mergician
 
 # Create virtual environment (REQUIRED)
 make venv
@@ -208,7 +208,7 @@ Closes #456
 ## Project Structure
 
 ```
-merge-pdf/
+pdf-mergician/
 ├── merge_pdf/          # Main package
 │   ├── __init__.py    # Package initialization
 │   ├── core.py        # Core PDF functions
@@ -316,7 +316,7 @@ __all__ = [
 
 (For maintainers)
 
-merge-pdf uses date-based versioning (YYYY.MM.DD.x). The version is automatically managed:
+pdf-mergician uses date-based versioning (YYYY.MM.DD.x). The version is automatically managed:
 
 1. Update CHANGELOG.md with changes
 2. Run full package preparation: `make package`
@@ -363,5 +363,5 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-Thank you for contributing to merge-pdf! 🎉
+Thank you for contributing to pdf-mergician! 🎉
 
