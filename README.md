@@ -1,4 +1,4 @@
-# pdf-mergician 🎩✨
+git stat# pdf-mergician 🎩✨
 
 [![PyPI version](https://badge.fury.io/py/pdf-mergician.svg)](https://badge.fury.io/py/pdf-mergician)
 [![Python Support](https://img.shields.io/pypi/pyversions/pdf-mergician.svg)](https://pypi.org/project/pdf-mergician/)

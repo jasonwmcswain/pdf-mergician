@@ -20,7 +20,7 @@ from merge_pdf.core import (
     split_pdf,
 )
 
-__version__ = "2025.12.03.1"
+__version__ = "2025.12.03.2"
 __all__ = [
     "merge",
     "merge_pattern",

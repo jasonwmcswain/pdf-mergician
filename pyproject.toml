@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pdf-mergician"
-version = "2025.12.03.1"
+version = "2025.12.03.2"
 description = "A powerful CLI-first PDF merging and manipulation tool built on pypdf - like a magician for your PDFs!"
 readme = "README.md"
 license = { text = "MIT" }
